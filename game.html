@@ -3,58 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="theme-color" content="#111313">
+    <meta name="description" content="Investigate Mr. Mann’s Manor, find Marley, and face Extinction before midnight.">
+    <title>Midnight at Mann’s Manor</title>
+    <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
-
 </head>
 <body>
     <header>
-      <nav>
-            <ul> 
-                <li><a href="index.html">Home</a></li>
-            </ul>
-            <ul> 
-                <li><a href="game.html">Play the game</a></li>
-            </ul>
-            <ul> 
-                <li><a href="about.html">About the creator</a></li>
-            </ul>
+      <nav aria-label="Main navigation">
+            <a href="index.html">Home</a>
+            <a href="game.html" aria-current="page">Play</a>
+            <a href="about.html">About</a>
         </nav>
     </header>
 
     <main>
-    <header>
-        <h1 id="scene-title">  </h1>
-        <h2 id="character-name">  </h2>
-    </header>
-    
-    <section>
-    <p id="scene-text">     </p>
-
-    </section>
-
-    <section>
-        <div id="choices-container"> </div>
-    </section>   
-        
-    <section>
-        <p> Current HP:</p>
-        <ul>
-            <li id="health-display"> 100</li>
-        </ul>
-
-        <p> Inventory:</p>
-        <ul>
-            <li id="inventory-display"> </li>
-        </ul>
-
-        <p id="message-display"></p>
-    </section>
-
-
+      <section class="game-shell" aria-labelledby="scene-title">
+        <p class="eyebrow">A dark detective story</p>
+        <div class="scene-heading">
+          <div>
+            <p class="clock-label">TIME <span id="scene-time">3:00 PM</span></p>
+            <h1 id="scene-title"></h1>
+          </div>
+          <p id="character-name" class="character-name"></p>
+        </div>
+        <p id="scene-text" class="scene-text" aria-live="polite"></p>
+        <div id="choices-container" class="choices-container" aria-label="Story choices"></div>
+        <p id="message-display" class="message-display" aria-live="polite"></p>
+        <aside class="status-panel" aria-label="Detective status">
+          <div><h2>Condition</h2><p><span id="health-display">100</span> HP</p></div>
+          <div><h2>Evidence</h2><p id="clue-display">None yet</p></div>
+          <div><h2>Carrying</h2><p id="inventory-display">Flashlight, Service pistol, Handcuffs</p></div>
+        </aside>
+      </section>
     </main>
-    <footer>
-
-    </footer>
+    <footer><p>Some choices cannot be taken back. The clock stops at midnight.</p></footer>
 </body>
 </html>
